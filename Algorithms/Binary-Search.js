@@ -10,7 +10,7 @@ function search(x, list) {
 
     let pos = -1;
     if (x === list[i]) { pos = i; }
-    else { pos = -1; }
+    //else { pos = -1; }
     return pos;
 }
 
