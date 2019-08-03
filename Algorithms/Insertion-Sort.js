@@ -15,7 +15,8 @@ end while
 // INSERTION-SORT => https://en.wikipedia.org/wiki/Insertion_sort
 function sort(a) {
     let i = 1;
-    while (i < a.length) {
+    let n = a.length;
+    while (i < n) {
         let x = a[i];
         let j = i - 1;
         while (j >= 0 && a[j] > x) {
