@@ -1,3 +1,30 @@
+/** Cormen
+INSERTION-SORT(A)
+1   for j = 2 to A.Length
+2       key = A[j]
+3       // Insert A[j] into the sorted sequence A[1..j-1].
+4       i = j - 1
+5       while i > 0 and A[i] > key           
+6           A[i + 1] = A[i]
+7           i = j - 1
+8       A[i + 1] = key
+*/
+
+/*
+function sort(a) {
+    let n = a.length;
+    for (let j = 1; j < n; j++) {
+        let key = a[j];
+        i = j - 1;
+        while (i > 0 && a[i] > key) {
+            a[i + 1] = a[i];
+            i = j - 1;
+        }
+        a[i + 1] = key;
+    }
+}
+*/
+
 /*
 i ← 1
 while i < length(A)
@@ -21,10 +48,10 @@ function sort(a) {
         let j = i - 1;
         while (j >= 0 && a[j] > x) {
             a[j + 1] = a[j];
-            j = j - 1;
+            j--;
         }
         a[j + 1] = x;
-        i = i + 1;
+        i++;
     }
 }
 
