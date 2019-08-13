@@ -1,3 +1,22 @@
+function change(amount, denominations) {
+    let n = denominations.length;
+    let coins = 0;
+    for (let i = 0; i < n; i++) {
+        while (amount >= denominations[i]) {
+            coins++;
+            amount -= denominations[i];
+        }
+    }
+    return coins;
+}
+
+amount = 67;
+a = [25, 10, 5, 1];
+let coins = change(amount, a);
+document.write(`The # of coins needed to change ${amount} are ${coins}`);
+
+/*
+
 let a = [5, 3, 4, 2, 1];
 let t = 6;
 
@@ -36,4 +55,5 @@ function choose(a, b) {
     let x = a || b;
 }
 
-let x = choose(3,4);
+let x = choose(3, 4);
+*/
