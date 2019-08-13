@@ -1,10 +1,30 @@
+// Cormen revised by me
+function sort(a) {
+    let n = a.length;
+    for (let j = 1; j < n; j++) {
+        let key = a[j];
+        let i;
+        for (i = j - 1; i >= 0 && a[i] > key; i--) { a[i + 1] = a[i]; }
+        console.log(a);
+        a[i + 1] = key;
+    }
+}
+
+let list = [5, 2, 4, 6, 1, 3];  //[3, 7, 4, 9, 5, 2, 6, 1];  // [3, 2, 4, 1, 5];
+sort(list);
+let txt = ``;
+for (let i = 0; i < list.length; i++) {
+    txt += `<h3>${list[i]}</h3>`;
+}
+document.write(txt);
+
 /** Cormen
 INSERTION-SORT(A)
 1   for j = 2 to A.Length
 2       key = A[j]
 3       // Insert A[j] into the sorted sequence A[1..j-1].
 4       i = j - 1
-5       while i > 0 and A[i] > key           
+5       while i > 0 and A[i] > key
 6           A[i + 1] = A[i]
 7           i = j - 1
 8       A[i + 1] = key
@@ -39,6 +59,7 @@ while i < length(A)
 end while
 */
 
+/*
 // INSERTION-SORT => https://en.wikipedia.org/wiki/Insertion_sort
 function sort(a) {
     let i = 1;
@@ -62,6 +83,7 @@ for (let i = 0; i < list.length; i++) {
     txt += `<h3>${list[i]}</h3>`;
 }
 document.write(txt);
+*/
 
 /*
 INSERTION-SORT => Rosen
