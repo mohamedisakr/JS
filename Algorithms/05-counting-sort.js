@@ -1,17 +1,26 @@
 function findOccurences(a) {
-    let n = a.length;
+    let n = a.length - 1;
+    let more = [];
     for (let i = 1; i < n; i++) {
-        if ((a[i] === a[i - 1]) && (a[i] < a[i + 1])) {
-            document.write(`<h4>${a[i]}</h4>`);
+        // console.log(`a[i - 1] = ${a[i - 1]}, a[i] = ${a[i]} , a[i + 1] = ${a[i + 1]}.`);
+        if ((a[i] === a[i - 1]) && (a[i] < a[i + 1])) {  // add equal to (to be (a[i] < a[i + 1]))
+            // document.write(`<h4>${a[i]}</h4>`);
+            more.push(a[i]);
         }
     }
-    if (a[n] === a[n - 1]) {
-        document.write(`<h4>${a[n]}</h4>`);
-    }
+    if (a[n] === a[n - 1]) { more.push(a[n]); }
+    return more;
 }
 
+// let a = [1, 2, 3, 4, 7, 7];
+// let more = findOccurences(a);
+// console.log(more);
+
 let arr = [1, 2, 3, 4, 7, 7, 7, 9, 9, 10];
-findOccurences(arr);
+let more = findOccurences(arr);
+console.log(more);
+
+
 
 /*
 function sort(a) {

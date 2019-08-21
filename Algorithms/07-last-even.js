@@ -10,4 +10,5 @@ function getLastEvenInteger(a) {
 
 let arr = [1, 2, 3, 4, 5, 6];
 let pos = getLastEvenInteger(arr);
-document.write(`<h4>${pos}</h4>`);
+// document.write(`<h4>${pos}</h4>`);
+console.log(`<h4>${pos}</h4>`);
