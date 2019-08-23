@@ -1,16 +1,7 @@
 // let txt = `But soft what light through yonder window breaks It is the east and Juliet is the sun Arise fair sun and kill the envious moon Who is already sick and pale with grief`;
-let txt = `Romeo and Juliet
-Act 2, Scene 2 
-
-SCENE II. Capulet's orchard.
-
-Enter ROMEO
-
-ROMEO
-
-He jests at scars that never felt a wound.
+let txt = `Romeo and Juliet Act 2, Scene 2  SCENE II. Capulet's orchard. Enter ROMEO
+ROMEO He jests at scars that never felt a wound.
 JULIET appears above at a window
-
 But, soft! what light through yonder window breaks?
 It is the east, and Juliet is the sun.
 Arise, fair sun, and kill the envious moon,
@@ -35,13 +26,9 @@ That birds would sing and think it were not night.
 See, how she leans her cheek upon her hand!
 O, that I were a glove upon that hand,
 That I might touch that cheek!
-
 JULIET
-
 Ay me!
-
 ROMEO
-
 She speaks:
 O, speak again, bright angel! for thou art
 As glorious to this night, being o'er my head
@@ -50,9 +37,7 @@ Unto the white-upturned wondering eyes
 Of mortals that fall back to gaze on him
 When he bestrides the lazy-pacing clouds
 And sails upon the bosom of the air.
-
 JULIET
-
 O Romeo, Romeo! wherefore art thou Romeo?
 Deny thy father and refuse thy name;
 Or, if thou wilt not, be but sworn my love,
@@ -389,9 +374,52 @@ Hence will I to my ghostly father's cell,
 His help to crave, and my dear hap to tell.
 
 Exit`;
+// she_loves_you
+let words = ['she', 'loves', 'you', 'yeah', 'yeah',
+    'yeah', 'she', 'loves', 'you', 'yeah', 'yeah', 'yeah',
+    'she', 'loves', 'you', 'yeah', 'yeah', 'yeah',
+    'you', 'think', "you've", 'lost', 'your', 'love',
+    'well', 'i', 'saw', 'her', 'yesterday-yi-yay',
+    "it's", 'you', "she's", 'thinking', 'of',
+    'and', 'she', 'told', 'me', 'what', 'to', 'say-yi-yay',
+    'she', 'says', 'she', 'loves', 'you',
+    'and', 'you', 'know', 'that', "can't", 'be', 'bad',
+    'yes', 'she', 'loves', 'you',
+    'and', 'you', 'know', 'you', 'should', 'be', 'glad',
+    'she', 'said', 'you', 'hurt', 'her', 'so',
+    'she', 'almost', 'lost', 'her', 'mind',
+    'and', 'now', 'she', 'says', 'she', 'knows',
+    "you're", 'not', 'the', 'hurting', 'kind',
+    'she', 'says', 'she', 'loves', 'you',
+    'and', 'you', 'know', 'that', "can't", 'be', 'bad',
+    'yes', 'she', 'loves', 'you',
+    'and', 'you', 'know', 'you', 'should', 'be', 'glad',
+    'oo', 'she', 'loves', 'you', 'yeah', 'yeah', 'yeah',
+    'she', 'loves', 'you', 'yeah', 'yeah', 'yeah',
+    'with', 'a', 'love', 'like', 'that',
+    'you', 'know', 'you', 'should', 'be', 'glad',
+    'you', 'know', "it's", 'up', 'to', 'you',
+    'i', 'think', "it's", 'only', 'fair',
+    'pride', 'can', 'hurt', 'you', 'too',
+    'pologize', 'to', 'her',
+    'Because', 'she', 'loves', 'you',
+    'and', 'you', 'know', 'that', "can't", 'be', 'bad',
+    'Yes', 'she', 'loves', 'you',
+    'and', 'you', 'know', 'you', 'should', 'be', 'glad',
+    'oo', 'she', 'loves', 'you', 'yeah', 'yeah', 'yeah',
+    'she', 'loves', 'you', 'yeah', 'yeah', 'yeah',
+    'with', 'a', 'love', 'like', 'that',
+    'you', 'know', 'you', 'should', 'be', 'glad',
+    'with', 'a', 'love', 'like', 'that',
+    'you', 'know', 'you', 'should', 'be', 'glad',
+    'with', 'a', 'love', 'like', 'that',
+    'you', 'know', 'you', 'should', 'be', 'glad',
+    'yeah', 'yeah', 'yeah',
+    'yeah', 'yeah', 'yeah', 'yeah'
+];
 
 // let counts = {};
-let words = txt.split(' ');
+// let words = txt.split(' ');
 
 let table = new Map();
 for (let i = 0; i < words.length; i++) {
@@ -409,6 +437,7 @@ let i = 1;
 let n = 10;
 for (let [key, value] of sortedMap) {
     console.log(key + ' = ' + value);
+    document.writeln(`${key} = ${value}<br/>`);
     if (i === n) { break; }
     i++;
 }
