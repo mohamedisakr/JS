@@ -99,20 +99,6 @@ describe('Test Singly Linked List class.', () => {
         expect(list.size).toBe(6);
     });
 
-    it('sort ', () => {
-        let list = new ForwardList();
-        let a = [15, 10, 5, 20, 3, 2];
-        list.assgin(a); // after assign a = [2 -> 3 -> 20 -> 5 -> 10 -> 15]
-        list.head = list.sort(list.head);
-        let b = [];
-        for (let first = list.head; first; first = first.next) {
-            b.push(first.value);
-        }
-        expect(b).toEqual([2, 3, 5, 10, 15, 20]);
-        // console.log(b);
-        expect(b.length).toBe(6);
-    });
-
     it('remove node CASE 1 : Middle with value = 3', () => {
         let list = new ForwardList();
         let a = [1, 2, 3, 4, 5];
@@ -304,15 +290,6 @@ describe('Test Singly Linked List class.', () => {
         expect(list2.size).toBe(6); // result 40 => 10 => 20 => 30 => 50 => 60
     });
 
-    it('reverse ', () => {
-        let list = new ForwardList();
-        let a = [10, 20, 40, 30, 70];
-        list.assgin(a);
-
-        list.reverse();
-        // list.show(list.head);
-        expect(list.size).toBe(5); // 70 => 30 => 40 => 20 => 10
-    });
 
     it('push ', () => {
         let list = new ForwardList();
@@ -328,7 +305,54 @@ describe('Test Singly Linked List class.', () => {
         let a = [10, 20, 40, 30, 70, 100, 200];
         list.assgin(a);
         list.popBack();
-        list.show(list.head);
+        // list.show(list.head);
         expect(list.size).toBe(6); // 10, 20, 40, 30, 70, 100
     });
+
+    it('reverse ', () => {
+        let list = new ForwardList();
+        let a = [7, 14, 21, 28];
+        list.assgin(a);
+        // list.show(list.head);
+        list.reverse();
+        // list.show(list.head);
+        expect(list.head.value).toBe(28); // 28 => 21 => 14 => 7 => NULL
+        expect(list.tail.value).toBe(7);
+    });
+
+    it('pushBack ', () => {
+        let list = new ForwardList();
+        let a = [4, 3, 2, 1];
+        for (let i = 0; i < a.length; i++) { list.pushBack(a[i]); }
+        // list.show(list.head);
+        expect(list.size).toBe(4); // 4 => 3 => 2 => 1 => NULL
+        expect(list.tail.value).toBe(1);
+    });
+
+    it('sort ', () => {
+        let list = new ForwardList();
+        let a = [15, 10, 5, 20, 3, 2];
+        list.assgin(a); // after assign a = [2 -> 3 -> 20 -> 5 -> 10 -> 15]
+        list.head = list.sort(list.head);
+        let b = [];
+        for (let first = list.head; first; first = first.next) {
+            b.push(first.value);
+        }
+        expect(b).toEqual([2, 3, 5, 10, 15, 20]);
+        // console.log(b);
+        // list.show(list.head);
+        expect(b.length).toBe(6);
+    });
+
+    it('Remove Duplicates ', () => { // 11->11->11->21->43->43->60
+        let list = new ForwardList();
+        let a = [21, 11, 11, 43, 43, 60];//11,
+        list.assgin(a);
+
+        list.removeDuplicates();
+        list.show(list.head);
+
+        expect(list.size).toBe(4); // 11 -> 21 -> 43 -> 60
+    });
+
 });
