@@ -82,6 +82,23 @@ class ForwardList {
         this._length++;
     }
 
+    /**
+     * Insert the element at the end position (tail) on list.
+     * The value from this function is copied to the space after last element in the container.
+     * The size of forward list increases by 1.
+     * @param {*} value New node value
+     */
+    pushBack(value) {
+        let node = new Node(value);
+        if (this.isEmpty) {
+            this.head = node;
+            this.tail = node;
+        }
+        this.tail.next = node;
+        this.tail = node;
+        this._length++;
+    }
+
     insertAfter() {
         let value;
         let array;
@@ -104,7 +121,7 @@ class ForwardList {
     }
 
     /**
-     * Pop or remove elements from a forward list from the front. 
+     * Pop or remove elements from a list from the front. 
      * The value is removed from the list from the beginning, and 
      * the container size is decreased by 1.
      */
@@ -114,7 +131,12 @@ class ForwardList {
         this._length--;
     }
 
-    popBack() { // let a = [10, 20, 40, 30, 70, 100, 200];
+    /**
+     * Pop or remove elements from a list from the end.
+     * The value is removed from the list from the end, and
+     * the container size is decreased by 1.
+     */
+    popBack() {
         if (this.isEmpty) { throw new Error('List is empty.'); }
         let pre = null;
         let first = this.head;
@@ -123,7 +145,6 @@ class ForwardList {
             first = first.next;
         }
         this.tail = pre;
-        // console.log(`tail = ${this.tail.value}`);
         pre.next = null;
         this._length--;
     }
@@ -254,6 +275,13 @@ class ForwardList {
         }
     }
 
+
+    assginFromLinkedlist(list) {
+        for (let current = list.head; current; current.next) {
+            this.pushBack(current.value);
+        }
+    }
+
     /**
      * Return the middle value of the linked list
      * @param {The head of linked list} theHead 
@@ -325,30 +353,81 @@ class ForwardList {
 
         // merge the left and right lists
         let sorted = this.sortToMerge(left, right);
+
+        // this = this.sortToMerge(left, right);
         // console.log(sorted);
-        return sorted;
+        // this = sorted;
+        return sorted; //this; // 
     }
+
+    /*
+    // sort() {
+    //     // Base case : if head is null
+    //     if (this.head === null || this.head.next === null) { return this.head; }
+
+    //     // get the middle of the list
+    //     let middle = this.getMiddle(this.head);
+    //     let middleNext = middle.next;
+
+    //     // set the next of the middle to null
+    //     middle.next = null;
+
+    //     // apply sort to the left list
+    //     let left = this.sort(this.head);
+
+    //     // apply sort to the right list
+    //     let right = this.sort(middleNext);
+
+    //     // merge the left and right lists
+    //     let sorted = this.sortToMerge(left, right);
+
+    //     this.clear();
+
+    //     for (let current = sorted.head; current; current = current.next) {
+    //         this.pushBack(current.value);
+    //     }
+    // }
+*/
+
 
     /**
      * reverses the order of the elements present in the linked list.
      */
     reverse() {
-        // create empty array
-        let a = [];
+        if (!this.head || !this.head.next) { return this.head; }
 
-        // loop through linked list and populate array
-        for (let first = this.head; first; first = first.next) {
-            a[a.length] = first.value;
+        let rev = this.head;
+        let newTail = this.head;
+        let curr = this.head.next;
+        rev.next = null;
+
+        while (curr) {
+            let temp = curr;
+            curr = curr.next;
+            temp.next = rev;
+            rev = temp;
         }
-
-        a.reverse();
-
-        // clear the original linked list elements
-        this.clear();
-
-        // use assign function to insert nodes from the populated array
-        this.assgin(a);
+        this.head = rev;
+        this.tail = newTail;
     }
+
+    /**
+     * deletes any duplicate nodes from the list
+     */
+    removeDuplicates() {
+        // *************************** list.head = list.sort(list.head); ****************
+        this.head = this.sort(this.head);
+
+        for (let current = this.head; current; current = current.next) {
+            // console.log(`current = ${current.value}`);
+            if (current.next && current.value === current.next.value) {
+                let temp = current.next.next;
+                current.next = temp;
+                this._length--;
+            }
+        }
+    }
+
     /**
      * Iterate throgth list nodes and print its values
      */
