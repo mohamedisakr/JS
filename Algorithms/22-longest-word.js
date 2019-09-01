@@ -1,7 +1,22 @@
-function longestwordV2(sentence) {
-    let longest = '';
+// my implementation to calc longest word size (length)
+function findLongestWord(sentence) {
+    let n = sentence.length;
     let size = 0;
-    let curr = '';
+    let max = 0;
+    for (let i = 0; i < n; i++) {
+        if (sentence[i] !== ' ') { size++; }
+        else {
+            if (max < size) { max = size; }
+            size = 0;
+        }
+    }
+    return max;
+}
+
+function longestwordV2(sentence) {
+    let longest = ``;
+    let size = 0;
+    let curr = ``;
     let n = sentence.length;
 
     for (let i = 0; i < n; i++) {
@@ -13,16 +28,16 @@ function longestwordV2(sentence) {
                 size = curr.length;
                 longest = curr;
             }
-            curr = "";
+            curr = ``;
         }
     }
 
     return longest;
 }
 
-let mystr = 'This is something ';
-let longest = longestwordV2(mystr);
-document.write(`<h4>The longest word is ${longest} and its length is ${longest.length}.</h4>`);
+// let mystr = 'This is something ';
+// let longest = longestwordV2(mystr);
+// document.write(`<h4>The longest word is ${longest} and its length is ${longest.length}.</h4>`);
 
 function longestword(sentence) {
     let longest = '';
@@ -50,9 +65,9 @@ function getLongestWord(statement) {
     return longest;
 }
 
-let text = 'I am an intern at geeksforgeeks';  //'Describe an algorithm to find the longest word in an English sentence where a sentence is a sequence of symbols, either a letter or a blank, which can then be broken into alternating words and blanks.';
-let longest = getLongestWord(text);
-document.write(`<h4>The longest word is ${longest} and its length is ${longest.length}.</h4>`);
+// let text = 'I am an intern at geeksforgeeks';  //'Describe an algorithm to find the longest word in an English sentence where a sentence is a sequence of symbols, either a letter or a blank, which can then be broken into alternating words and blanks.';
+// let longest = getLongestWord(text);
+// document.write(`<h4>The longest word is ${longest} and its length is ${longest.length}.</h4>`);
 
 // let words = statement.split(' ');
 // let n = words.length;

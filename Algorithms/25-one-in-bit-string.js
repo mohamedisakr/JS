@@ -7,6 +7,6 @@ function countOnes(bitstring) {
     return count;
 }
 
-let strbit = '11111101';//'11101010';
-let count = countOnes(strbit);
-document.write(`<h4>The number of 1s in a bit string ${strbit} is ${count}.</h4>`);
+let bitstr = '11111101';//'11101010';
+let count = countOnes(bitstr);
+document.write(`<h4>The number of 1s in a bit string ${bitstr} is ${count}.</h4>`);

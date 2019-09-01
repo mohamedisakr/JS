@@ -1,5 +1,5 @@
 function greaterThanSum(a) {
-    let ans = [a[0]];
+    let ans = [];   //a[0]
     let s = a[0];
     let n = a.length;
 
@@ -10,9 +10,9 @@ function greaterThanSum(a) {
     return ans;
 }
 
-const arr = [1, 2, 4, 8, 12, 32, 64, 128]; // [1, 2, 4, 8, 16, 32, 64, 128]; //[1, 2, 3, 6, 12, 24, 48, 96];
-const ans = greaterThanSum(arr);
-console.log(ans);
+// const arr = [1, 2, 4, 8, 12, 32, 64, 128]; // [1, 2, 4, 8, 16, 32, 64, 128]; //[1, 2, 3, 6, 12, 24, 48, 96];
+// const ans = greaterThanSum(arr);
+// console.log(ans);
 
 /*
 function sumPreviousTerms(arr, val, lo, hi) {

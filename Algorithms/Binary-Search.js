@@ -1,6 +1,7 @@
 function search(x, list) {
     let i = 0;
     let j = list.length;
+    if (key < a[lo] || key > a[hi]) { return -1; }
 
     while (i < j) {
         let m = Math.floor((i + j) / 2);

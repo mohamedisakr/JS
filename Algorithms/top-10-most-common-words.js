@@ -441,3 +441,65 @@ for (let [key, value] of sortedMap) {
     if (i === n) { break; }
     i++;
 }
+
+
+
+// console.log(sortedMap);
+
+/*
+for (let i = 0; i < words.length; i++) {
+    counts[words[i]] = counts[words[i]] ? counts[words[i]] + 1 : 1;
+}
+
+let s = ``;
+for (const key in counts) {
+    if (counts.hasOwnProperty(key)) {
+        s += `key = ${key} , value = ${counts[key]}<br/>`;
+    }
+}
+document.write(s);
+*/
+
+/*
+let dict = {};
+for (const key in counts) {
+    if (counts.hasOwnProperty(key)) {
+        dict[counts[key]] = key;
+    }
+}
+
+let s = ``;
+for (const key in dict) {
+    if (dict.hasOwnProperty(key)) {
+        s += `key = ${key} , value = ${dict[key]}<br/>`;
+    }
+}
+document.write(s);
+// */
+
+// let sorted = [];
+// for (const key in counts) {
+//     if (counts.hasOwnProperty(key)) {
+//         sorted.push([key, counts[key]]);
+//     }
+// }
+
+// sorted.sort((a, b) => { return a[1] - b[1]; });
+
+// document.write(sorted);
+
+// // Get an array of the keys:
+// let keys = Object.keys(counts);
+
+// // Then sort by using the keys to lookup the values in the original object:
+// keys.sort(function (a, b) { return counts[a] - counts[b] });
+
+// document.write(keys);
+
+// let s = ``;
+// for (const key in counts) {
+//     if (counts.hasOwnProperty(key)) {
+//         s += `key = ${key} , value = ${counts[key]}<br/>`;
+//     }
+// }
+// document.write(s);

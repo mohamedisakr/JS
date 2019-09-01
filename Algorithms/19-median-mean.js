@@ -1,3 +1,43 @@
+function calculateStat(a, b, c) {
+    let max;
+    let min;
+    let mean;
+    let median;
+    
+    if (a >= b && a >= c) {
+        max = a;
+        if (b >= c) {
+            median = b;
+            min = c;
+        } else {
+            median = c;
+            min = b;
+        }
+    }
+    else if (b >= a && b >= c) {
+        max = b;
+        if (a >= c) {
+            median = a;
+            min = c;
+        } else {
+            median = c;
+            min = a;
+        }
+    }
+    else {
+        max = c;
+        if (a >= b) {
+            median = a;
+            min = b;
+        } else {
+            median = b;
+            min = a;
+        }
+    }
+    mean = (a + b + c) / 3;
+    return [max, mean, median, min];
+}
+
 function getStat(a) {
     let n = a.length;
     let min = a[0];
@@ -18,10 +58,10 @@ function getStat(a) {
     return [min, max, mean, median];
 }
 
-let array = [4, 2, 3];
-let res = getStat(array);
-[min, max, mean, median] = res;
-document.write(`<h4>min =  ${min}, max =  ${max}, mean = ${mean}, median = ${median}.</h4>`);
+// let array = [4, 2, 3];
+// let res = getStat(array);
+// [min, max, mean, median] = res;
+// document.write(`<h4>min =  ${min}, max =  ${max}, mean = ${mean}, median = ${median}.</h4>`);
 
 
 /*

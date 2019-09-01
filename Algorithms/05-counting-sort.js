@@ -1,4 +1,5 @@
 function findOccurences(a) {
+    if (a.length === 0) { throw new Error('Array is empty'); }
     let n = a.length - 1;
     let more = [];
     for (let i = 1; i < n; i++) {
@@ -16,7 +17,7 @@ function findOccurences(a) {
 // let more = findOccurences(a);
 // console.log(more);
 
-let arr = [1, 2, 3, 4, 7, 7, 7, 9, 9, 10];
+let arr = []; //[1, 2, 3, 4, 7, 7, 7, 9, 9, 10];
 let more = findOccurences(arr);
 console.log(more);
 

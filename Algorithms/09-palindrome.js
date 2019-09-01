@@ -28,7 +28,7 @@ function isPalindrome_V2(statement) {
     console.log(lowcase);
     let n = lowcase.length;
     for (let i = 0; i <= Math.floor(n / 2); i++) {
-        console.log(lowcase[i], lowcase[n - i - 1]);
+        // console.log(lowcase[i], lowcase[n - i - 1]);
         if (lowcase[i] !== lowcase[n - i - 1]) { return false; }
     }
     return true;
@@ -44,9 +44,11 @@ function isPalindrome_V2(statement) {
 function isPalindrome_V3(statement) {
     let res = removeSpaces(statement);
     let lowcase = res.toLowerCase();
-    console.log(lowcase);
+    // console.log(lowcase);
     let n = lowcase.length;
-    return lowcase.slice(0, parseInt(n / 2)) === reverseString(lowcase.slice(n - parseInt(n / 2), n));
+    let firstPart = lowcase.slice(0, parseInt(n / 2));
+    let secondPartRev = reverseString(lowcase.slice(n - parseInt(n / 2), n));
+    return firstPart === secondPartRev;
 }
 
 // let phrase = 'Mr Owl ate my metal worm';   //'anything'; // 'My gym';    //

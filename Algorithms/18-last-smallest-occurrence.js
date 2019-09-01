@@ -1,8 +1,8 @@
-function find(array) {
-    let n = array.length;
+function find(a) {
+    let n = a.length;
     let pos = 0;
     for (let i = 1; i < n; i++) {
-        if (array[i] <= array[pos]) { pos = i; }
+        if (a[i] <= a[pos]) { pos = i; }
     }
     return pos;
 }
